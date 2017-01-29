@@ -1,0 +1,61 @@
+{
+  "name": "@isogon/inject",
+  "version": "0.0.1",
+  "description": "A middleware that injects dependencies for redux action creators",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "yarn build:before && yarn build:actual",
+    "build:before": "yarn run clean && yarn lint",
+    "build:actual": "babel -s inline --source-root src/ -d dist src/",
+    "clean": "rimraf dist",
+    "lint": "concurrently \"yarn lint:src\" \"yarn lint:tests\"",
+    "lint:src": "eslint -c @isogon src/",
+    "lint:tests": "eslint -c @isogon/eslint-config/tests tests/",
+    "test:before": "yarn test:src && yarn build",
+    "test:actual": "yarn test:dist",
+    "test": "yarn test:before && yarn test:actual",
+    "test:src": "better-npm-run test:src",
+    "test:dist": "better-npm-run test:dist"
+  },
+  "betterScripts": {
+    "test:src": {
+      "command": "mocha -r tests/prepare tests/**/*.spec.js"
+    },
+    "test:dist": {
+      "command": "better-npm-run test:src",
+      "env": {
+        "INJECT_TEST_TYPE": "dist"
+      }
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@isogon/eslint-config": "^0.0.12",
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "better-npm-run": "^0.0.14",
+    "chai": "^3.5.0",
+    "concurrently": "^3.1.0",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-html": "^1.5.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.7",
+    "yarn": "^0.19.1"
+  },
+  "dependencies": {
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "chai-as-promised": "^6.0.0",
+    "sinon-chai": "^2.8.0"
+  }
+}
