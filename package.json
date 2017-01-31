@@ -2,6 +2,7 @@
   "name": "@isogon/inject",
   "version": "0.0.1",
   "description": "A middleware that injects dependencies for redux action creators",
+  "private": false,
   "main": "dist/index.js",
   "scripts": {
     "build": "yarn build:before && yarn build:actual",
