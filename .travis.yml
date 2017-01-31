@@ -10,4 +10,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: isogon/eslint-config
+    repo: isogon/inject
