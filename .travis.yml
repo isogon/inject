@@ -2,3 +2,12 @@ language: node_js
 node_js:
 - '6'
 cache: yarn
+deploy:
+  provider: npm
+  email: kegan+isogon@keganmyers.com
+  api_key:
+    secure: jthcrrsKsv+pkfRzDrTXiOnsdYcn6O7DaDC/EqtOlzNwKqkIdySQo5tND2n29ZwCeKhYxlvSOXEfOY6rxrf7z21709ft1vgiXk4+jzkwGwKHFFIlUBAT3Q9AkaEMKW1nj/r0I3N19S2fvDTLkCWdQlOoe249MRA1IzbuPjz27Bbr/XBKtvyLbq3hUuumhkXdoG8PrCFNG3nhWBv2Pn1RvuvA8K7w9KpVTvG8x8+T5C314zXiNqvD+b4QYXDIFfP4L9kd0H6MVuK7YbK7iWO66bK9VXMVDAe+HKuu8O/n15ESwVhExnTPgo52Rjn+IHvUQE+xsjEs76kY0XSLiwHFkN0Ngi4hns04UchK8wiJhn19KfoM74J+lQbAgHuqG1jwt2G1+Ez7oUiB5khAz2iHpKBNz2SaX++llAf6B5GzEKJEMXWFAjVX9/TrEVgK0Z+xGTy5GX+e8uHPpgcgb8JvczvHsiDIkTDpU5Fdf5X/vbnkvR+n/cXpK76Sjsrf205pSY22oIIn37+z2Nmul5t6DoMSoVHUYRWO+UT6ZK1hb59lOS8YQGdu8f/HKRffvufedv8tW9BJC8BHFO6Hl4hNhLFPiLw6q2fOU58L08YrRuTG9jQJHDP6FGAwyrg3SoTEcbVJxkFkJ+KJoRFYZA0ZI5Qyy2h5rJdehM8dAsPjTas=
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: isogon/eslint-config

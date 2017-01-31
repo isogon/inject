@@ -15,7 +15,8 @@
     "test:actual": "yarn test:dist",
     "test": "yarn test:before && yarn test:actual",
     "test:src": "better-npm-run test:src",
-    "test:dist": "better-npm-run test:dist"
+    "test:dist": "better-npm-run test:dist",
+    "prepublish": "./scripts/setVersion.js"
   },
   "betterScripts": {
     "test:src": {
