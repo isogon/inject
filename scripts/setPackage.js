@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 if (process.env.TRAVIS !== 'true') {
-  process.exit(0);
+  console.log('you should not be deploying outside of travis')
+  process.exit(1);
 }
 
 if (process.env.TRAVIS_PULL_REQUEST !== 'false') {

@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - '6'
+before_install:
+  # we want npm 4 for the prepublishOnly behavior
+  - "npm install -g npm@^4"
 cache: yarn
 deploy:
   provider: npm
