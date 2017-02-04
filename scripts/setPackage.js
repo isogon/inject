@@ -22,6 +22,16 @@ const packagePath = path.resolve(__dirname, '../package.json');
 
 const currentPackage = JSON.parse(fs.readFileSync(packagePath).toString());
 
-currentPackage.version = tagName;
+const KEPT_KEYS = ['name', 'description', 'private', 'main', 'license', 'dependencies'];
 
-fs.writeFileSync(packagePath, JSON.stringify(currentPackage, null, 2));
+const newPackage = KEPT_KEYS.reduce((acc, key) => {
+  if (!Object.hasOwnProperty.call(currentPackage, key)) {
+    return acc;
+  }
+
+  return Object.assign(acc, {
+    [key]: currentPackage[key],
+  });
+}, { version: tagName });
+
+fs.writeFileSync(packagePath, JSON.stringify(newPackage, null, 2));
