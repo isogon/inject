@@ -1,6 +1,6 @@
 {
   "name": "@isogon/inject",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A middleware that injects dependencies for redux action creators",
   "private": false,
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "test": "yarn test:before && yarn test:actual",
     "test:src": "better-npm-run test:src",
     "test:dist": "better-npm-run test:dist",
-    "prepublish": "./scripts/setVersion.js"
+    "prepublish": "./scripts/setPackage.js"
   },
   "betterScripts": {
     "test:src": {
