@@ -17,7 +17,7 @@
     "test": "yarn test:before && yarn test:actual",
     "test:src": "better-npm-run test:src",
     "test:dist": "better-npm-run test:dist",
-    "prepublishOnly": "./scripts/setPackage.js && yarn generate-lock-entry --production > yarn.lock"
+    "manualPrepublish": "./scripts/setPackage.js && yarn generate-lock-entry --production > yarn.lock"
   },
   "betterScripts": {
     "test:src": {
