@@ -17,7 +17,7 @@
     "test": "yarn test:before && yarn test:actual",
     "test:src": "better-npm-run test:src",
     "test:dist": "better-npm-run test:dist",
-    "manualPrepublish": "./scripts/setPackage.js && yarn generate-lock-entry --production > yarn.lock"
+    "manualPrepublish": "prepare-isogon-package . && yarn generate-lock-entry --production > yarn.lock"
   },
   "betterScripts": {
     "test:src": {
@@ -33,6 +33,7 @@
   "license": "Unlicense",
   "devDependencies": {
     "@isogon/eslint-config": "^0.0.13",
+    "@isogon/prepare-package": "^0.0.3",
     "babel-cli": "^6.22.2",
     "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.22.0",
@@ -58,6 +59,5 @@
     "sinon-chai": "^2.8.0",
     "yarn": "^0.19.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
